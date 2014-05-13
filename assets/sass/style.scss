@@ -5,6 +5,8 @@
 $primary: #F03838;
 $secondary: #303030;
 $background: #FEFEFE;
+$primary_font: "Merriweather", arial, sans-serif;
+$secondary_font: "Lato", arial, sans-serif;
 
 /* ============================================================ */
 /* Base */
@@ -15,12 +17,12 @@ html, body { height: 100%; }
 body {
     background: $background;
     color: #424242;
-    font-family: "Merriweather", arial, sans-serif;
+    font-family: $primary_font;
     font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Lato", arial, sans-serif;
+    font-family: $secondary_font;
     margin-bottom: 33px;
     text-transform: none;
 }
@@ -38,6 +40,7 @@ p {
 }
 
 a {
+    font-family: $secondary_font;
     color: $primary;
     text-decoration: none;
 }
@@ -193,7 +196,7 @@ table {
 /* ============================================================ */
 
 .site-header {
-    padding: 100px 0 0;
+    padding: 20px 0 20px 0;
     overflow: auto;
     text-align: center;
     text-transform: uppercase;
@@ -225,19 +228,33 @@ table {
 
     img { margin: 0; }
 }
+.site-logo-subheader {
+    margin: 5px 25px 25px 25px;
+    font-family: $secondary_font;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: right;
+}
 
 .site-nav {
     list-style: none;
     margin: 28px 0 10px;
+    padding: 10px;
+    background-color: $secondary;
+}
+
+.site-nav a {
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 300;
 }
 
 .site-nav-item {
     display: inline-block;
     font-size: 14px;
-    font-weight: 700;
     margin: 0 10px;
 
-    a:hover { color: #424242; }
+    a:hover { color: $primary; }
 }
 
 /* ============================================================ */
@@ -249,9 +266,8 @@ table {
 .post-container { margin: 0 40px; }
 
 .post-header {
-    border-bottom: 6px solid $secondary;
-    margin: 0 0 50px;
-    padding: 0 0 80px;
+    margin: 0 0 30px;
+    padding: 0 0 20px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -356,10 +372,9 @@ table {
 /* ============================================================ */
 
 .post-list {
-    border-top: 6px solid $secondary;
     list-style: none;
-    margin: 80px 40px 0;
-    padding: 35px 0 0;
+    margin: 10px 40px 0;
+    padding: 10px 0 0;
 }
 
 .post-stub {
