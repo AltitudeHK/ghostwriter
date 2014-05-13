@@ -28,8 +28,8 @@ jQuery(function($) {
     var $postIndex = $('#post-index');
 
     // Initially hide the index and show the latest post
-    $latestPost.show();
-    $postIndex.hide();
+    $latestPost.hide();
+    $postIndex.show();
 
     // Show the index if the url has "page" in it (a simple
     // way of checking if we're on a paginated page.)
