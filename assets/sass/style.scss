@@ -15,11 +15,12 @@ html, body { height: 100%; }
 body {
     background: $background;
     color: #424242;
-    font-family: "Open Sans", arial, sans-serif;
+    font-family: "Merriweather", arial, sans-serif;
     font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", arial, sans-serif;
     margin-bottom: 33px;
     text-transform: none;
 }
@@ -95,7 +96,7 @@ table {
     margin-bottom:40px;
     width: 100%;
 
-    tbody > tr:nth-child(odd) > td, 
+    tbody > tr:nth-child(odd) > td,
     tbody > tr:nth-child(odd) > th {
         background-color: #f7f7f3;
     }
@@ -258,7 +259,7 @@ table {
 .post-title,
 .page-title {
     font-size: 52px;
-    font-weight: 700;
+    font-weight: 300;
     margin: 15px 0;
     text-align: center;
     text-transform: uppercase;
@@ -268,9 +269,10 @@ table {
 
 .post-date,
 .blog-description {
+    font-family: "Lato", arial, sans-serif;
+    font-weight: 300;
     color: #AEADAD;
     font-size: 14px;
-    font-weight: 600;
     line-height: 1;
     margin: 25px 0 0;
 
