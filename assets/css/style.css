@@ -21,13 +21,8 @@ h2, h3, h4, h5, h6 {
   display: none; }
 
 p {
-  line-height: 1.8;
-  margin: 0 0 30px; }
-
-a {
-  font-family: "Open Sans", arial, sans-serif;
-  color: #4fc1e9;
-  text-decoration: none; }
+  line-height: 1.8em;
+  margin: 0 0 20px; }
 
 ul, ol {
   list-style-position: inside;
@@ -118,6 +113,11 @@ table {
 
 .navigation a {
   font-weight: 400; }
+
+.navigation a, .title a {
+  font-family: "Open Sans", arial, sans-serif;
+  color: #4fc1e9;
+  text-decoration: none; }
 
 /* ============================================================ */
 /* Blog */
@@ -223,6 +223,7 @@ footer h6 {
   font-size: 52px;
   font-weight: 300;
   margin: 15px 0;
+  letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase; }
 

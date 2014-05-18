@@ -35,14 +35,8 @@ h2,h3,h4,h5,h6 {
 .hidden { display: none; }
 
 p {
-    line-height: 1.8;
-    margin: 0 0 30px;
-}
-
-a {
-    font-family: $secondary_font;
-    color: $primary;
-    text-decoration: none;
+    line-height: 1.8em;
+    margin: 0 0 20px;
 }
 
 ul, ol {
@@ -147,8 +141,16 @@ table {
 /* ============================================================ */
 
 .button-square { margin-left: 10px; }
+
 .logo img { margin: 0; }
+
 .navigation a { font-weight: 400; }
+
+.navigation a, .title a {
+    font-family: $secondary_font;
+    color: $primary;
+    text-decoration: none;
+}
 
 /* ============================================================ */
 /* Blog */
@@ -265,6 +267,7 @@ footer h6 {
     font-size: 52px;
     font-weight: 300;
     margin: 15px 0;
+    letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
 }
