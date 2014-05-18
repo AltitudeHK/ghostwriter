@@ -37,7 +37,7 @@ em { font-style: italic; }
 strong { font-weight: 400; }
 small { font-size: 0.8em; }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h3,h4,h5,h6 {
 	color: #060606;
 	font-style: normal;
 	font-weight: 300;
@@ -49,30 +49,6 @@ h1 {
 	font-size: 3.46666666667em;
 	text-transform: uppercase;
 	letter-spacing: 0.20em;
-}
-
-h2 {
-	font-size: 2.4em;
-	text-transform: uppercase;
-	letter-spacing: 0.20em;
-}
-
-h3 {
-	font-size: 1em;
-	text-transform: uppercase;
-	letter-spacing: 0.20em;
-	font-weight: 400;
-}
-
-h4 {
-	font-size: 1em;
-	text-transform: uppercase;
-	font-weight: 400;
-}
-
-h5 {
-	font-size: 1em;
-	font-weight: 400;
 }
 
 h6 {
