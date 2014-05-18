@@ -17,15 +17,21 @@ jQuery(function($) {
     });
 
     /* ============================================================ */
+    /* Navigation */
+    /* ============================================================ */
+
+    jQuery(document).aetherNavigation();
+
+    /* ============================================================ */
     /* Ajax Loading */
     /* ============================================================ */
 
-    var History = window.History;
-    var loading = false;
-    var showIndex = false;
-    var $ajaxContainer = $('#ajax-container');
-    var $latestPost = $('#latest-post');
-    var $postIndex = $('#post-index');
+    // var History = window.History;
+    // var loading = false;
+    // var showIndex = false;
+    // var $ajaxContainer = $('#ajax-container');
+    // var $latestPost = $('#latest-post');
+    // var $postIndex = $('#post-index');
 
     // Initially hide the index and show the latest post
     // $latestPost.show();

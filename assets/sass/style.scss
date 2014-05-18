@@ -2,7 +2,7 @@
 // Colours //
 // ============================================================ //
 
-$primary: #F03838;
+$primary: #4fc1e9;
 $secondary: #303030;
 $background: #FEFEFE;
 $primary_font: "Merriweather", arial, sans-serif;
@@ -12,183 +12,34 @@ $secondary_font: "Lato", arial, sans-serif;
 /* Base */
 /* ============================================================ */
 
-html, body { height: 100%; }
+h4 { font-size: 1.3em }
 
-body {
-    background: $background;
-    color: #424242;
-    font-family: $primary_font;
-    font-size: 18px;
+.navigation ul {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    list-style-type: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $secondary_font;
-    margin-bottom: 33px;
-    text-transform: none;
-}
+.button-square { margin-left: 10px; }
 
-h1 { font-size: 26px; }
-h2 { font-size: 24px; }
-h3 { font-size: 20px; margin-bottom: 20px; }
-h4 { font-size: 18px; margin-bottom: 18px; }
-h5 { font-size: 16px; margin-bottom: 15px; }
-h6 { font-size: 14px; margin-bottom: 12px; }
-
-p {
-    line-height: 1.8;
-    margin: 0 0 30px;
-}
-
-a {
-    font-family: $secondary_font;
-    color: $primary;
-    text-decoration: none;
-}
-
-ul, ol {
-    list-style-position: inside;
-    line-height: 1.8;
-    margin: 0 0 40px;
-    padding: 0;
-
-    ul, ol { margin: 10px 0 0 20px; }
-
-    li {
-        margin: 0 0 10px;
-
-        &:last-of-type { margin-bottom: 0; }
-    }
-}
-
-blockquote {
-    border-left: 1px dotted $secondary;
-    margin: 40px 0;
-    padding: 5px 30px;
-
-    p {
-        color: #AEADAD;
-        display: block;
-        font-style: italic;
-        margin: 0;
-        width: 100%;
-    }
-}
-
-img {
-    display: block;
-    margin: 40px 0;
-    width: auto;
-    max-width: 100%;
-}
-
-pre {
-    background: #F1F0EA;
-    border: 1px solid #DDDBCC;
-    border-radius: 3px;
-    margin: 0 0 40px;
-    padding: 15px 20px;
-}
-
-hr {
-    border: none;
-    border-bottom: 1px dotted #303030;
-    margin: 45px 0;
-}
-
-table {
-    margin-bottom:40px;
-    width: 100%;
-
-    tbody > tr:nth-child(odd) > td,
-    tbody > tr:nth-child(odd) > th {
-        background-color: #f7f7f3;
-    }
-
-    th {
-        padding: 0 10px 10px;
-        text-align: left;
-    }
-
-    td { padding: 10px; }
-
-    tr { border-bottom: 1px dotted #AEADAD; }
-}
-
-::selection {
-    background: #FFF5B8;
-    color: #000;
-    display: block;
-}
-
-::-moz-selection {
-    background: #FFF5B8;
-    color: #000;
-    display: block;
-}
-
-.fluid-width-video-wrapper { margin-bottom: 40px; }
-
-.hidden {
-    text-indent: -9999px;
-    visibility: hidden;
-    display: none;
-}
-
-.clearfix {
-    &:after{
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
+.hidden { display: none; }
 
 /* ============================================================ */
-/* General Appearance */
+/* Blog */
 /* ============================================================ */
 
-.container {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    max-width: 889px;
-}
+#blog { padding-top: 40px }
 
-#wrapper {
-    height: auto;
-        min-height: 100%;
-    /* This must be the same as the height of the footer */
-    margin-bottom: -265px;
+.title a { font-weight: 300; }
 
-    &:after {
-        content: "";
-        display: block;
-        /* This must be the same as the height of the footer */
-        height: 265px;
-    }
-}
+.content.padded { padding-bottom: 60px; }
 
-.button {
-    background: $secondary;
-    border: none;
-    border-radius: 3px;
-    color: #FEFEFE;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 10px 12px;
-    text-transform: uppercase;
+/* ============================================================ */
+/* Ajax Container */
+/* ============================================================ */
 
-    &:hover { background: $primary; }
-}
-
-.button-square {
-    background: $primary;
-    color: #FFF;
-    float: left;
-    font-size: 17px;
-    margin: 0 0 0 10px;
-    padding: 3px 8px 4px;
-
-    &:hover { background: $secondary; }
+#ajax-container {
+    padding-top: 50px;
 }
 
 /* ============================================================ */
@@ -319,7 +170,7 @@ table {
 
     span { font-weight: 600; }
 
-    a:hover { color: $secondary; }
+    a:hover { color: white; background-color: $secondary; }
 }
 
 .post-tags {
@@ -365,6 +216,10 @@ table {
     }
 }
 
+.post-navigation nav {
+    position: relative;
+}
+
 .page-number { display: none; }
 
 /* ============================================================ */
@@ -393,7 +248,7 @@ table {
         padding: 20px 5px;
 
         &:hover {
-            background: #FCF5F5;
+            background: rgb(250,253,255);
             color: $primary;
             padding: 20px 12px;
 
@@ -432,46 +287,6 @@ table {
 }
 
 /* ============================================================ */
-/* Footer */
-/* ============================================================ */
-
-.footer {
-    background: $secondary;
-    color: #D3D3D3;
-    height: 265px;
-    margin-top: 95px;
-    overflow: auto;
-
-    .site-title-wrapper { margin: 80px auto 35px; }
-
-    .site-title a:hover,
-    .button-square:hover {
-        background: #121212;
-    }
-
-    .button-jump-top {
-        font-size: 23px;
-        line-height: 1.1;
-        padding-top: 1px;
-    }
-}
-
-.footer-copyright {
-    color: #656565;
-    font-size: 14px;
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
-
-    a {
-        color: #656565;
-        font-weight: 700;
-
-        &:hover { color: #FEFEFE; }
-    }
-}
-
-/* ============================================================ */
 /* NProgress */
 /* ============================================================ */
 
@@ -489,7 +304,7 @@ table {
 /* ============================================================ */
 
 #disqus_thread {
-    padding-top: 50px;
+    padding: 60px 0px;
 }
 
 /* ============================================================ */
