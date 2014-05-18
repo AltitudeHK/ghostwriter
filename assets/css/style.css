@@ -1,6 +1,12 @@
 /* ============================================================ */
 /* Base */
 /* ============================================================ */
+body {
+  font-family: "Merriweather", arial, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", arial, sans-serif; }
+
 h4 {
   font-size: 1.3em; }
 
@@ -9,11 +15,107 @@ h4 {
   -webkit-margin-after: 0em;
   list-style-type: none; }
 
+.hidden {
+  display: none; }
+
+p {
+  line-height: 1.8;
+  margin: 0 0 30px; }
+
+a {
+  font-family: "Open Sans", arial, sans-serif;
+  color: #4fc1e9;
+  text-decoration: none; }
+
+ul, ol {
+  list-style-position: inside;
+  line-height: 1.8;
+  margin: 0 0 40px;
+  padding: 0; }
+  ul ul, ul ol, ol ul, ol ol {
+    margin: 10px 0 0 20px; }
+  ul li, ol li {
+    margin: 0 0 10px; }
+    ul li:last-of-type, ol li:last-of-type {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 1px dotted #303030;
+  margin: 40px 0;
+  padding: 5px 30px; }
+  blockquote p {
+    color: #AEADAD;
+    display: block;
+    font-style: italic;
+    margin: 0;
+    width: 100%; }
+
+img {
+  display: block;
+  margin: 40px 0;
+  width: auto;
+  max-width: 100%; }
+
+pre {
+  background: #F1F0EA;
+  border: 1px solid #DDDBCC;
+  border-radius: 3px;
+  margin: 0 0 40px;
+  padding: 15px 20px; }
+
+hr {
+  border: none;
+  border-bottom: 1px dotted #303030;
+  margin: 45px 0; }
+
+table {
+  margin-bottom: 40px;
+  width: 100%; }
+  table tbody > tr:nth-child(odd) > td,
+  table tbody > tr:nth-child(odd) > th {
+    background-color: #f7f7f3; }
+  table th {
+    padding: 0 10px 10px;
+    text-align: left; }
+  table td {
+    padding: 10px; }
+  table tr {
+    border-bottom: 1px dotted #AEADAD; }
+
+::selection {
+  background: #FFF5B8;
+  color: #000;
+  display: block; }
+
+::-moz-selection {
+  background: #FFF5B8;
+  color: #000;
+  display: block; }
+
+.fluid-width-video-wrapper {
+  margin-bottom: 40px; }
+
+.hidden {
+  text-indent: -9999px;
+  visibility: hidden;
+  display: none; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* ============================================================ */
+/* General Appearance */
+/* ============================================================ */
 .button-square {
   margin-left: 10px; }
 
-.hidden {
-  display: none; }
+.logo img {
+  margin: 0; }
+
+.navigation a {
+  font-weight: 400; }
 
 /* ============================================================ */
 /* Blog */
@@ -67,7 +169,7 @@ h4 {
 
 .site-logo-subheader {
   margin: 5px 25px 25px 25px;
-  font-family: "Lato", arial, sans-serif;
+  font-family: "Open Sans", arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
   text-align: right; }

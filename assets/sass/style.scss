@@ -6,11 +6,17 @@ $primary: #4fc1e9;
 $secondary: #303030;
 $background: #FEFEFE;
 $primary_font: "Merriweather", arial, sans-serif;
-$secondary_font: "Lato", arial, sans-serif;
+$secondary_font: "Open Sans", arial, sans-serif;
 
 /* ============================================================ */
 /* Base */
 /* ============================================================ */
+
+body {
+    font-family: $primary_font;
+}
+
+h1,h2,h3,h4,h5,h6 { font-family: $secondary_font; }
 
 h4 { font-size: 1.3em }
 
@@ -20,9 +26,123 @@ h4 { font-size: 1.3em }
     list-style-type: none;
 }
 
-.button-square { margin-left: 10px; }
-
 .hidden { display: none; }
+
+p {
+    line-height: 1.8;
+    margin: 0 0 30px;
+}
+
+a {
+    font-family: $secondary_font;
+    color: $primary;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style-position: inside;
+    line-height: 1.8;
+    margin: 0 0 40px;
+    padding: 0;
+
+    ul, ol { margin: 10px 0 0 20px; }
+
+    li {
+        margin: 0 0 10px;
+
+        &:last-of-type { margin-bottom: 0; }
+    }
+}
+
+blockquote {
+    border-left: 1px dotted $secondary;
+    margin: 40px 0;
+    padding: 5px 30px;
+
+    p {
+        color: #AEADAD;
+        display: block;
+        font-style: italic;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+img {
+    display: block;
+    margin: 40px 0;
+    width: auto;
+    max-width: 100%;
+}
+
+pre {
+    background: #F1F0EA;
+    border: 1px solid #DDDBCC;
+    border-radius: 3px;
+    margin: 0 0 40px;
+    padding: 15px 20px;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px dotted #303030;
+    margin: 45px 0;
+}
+
+table {
+    margin-bottom:40px;
+    width: 100%;
+
+    tbody > tr:nth-child(odd) > td,
+    tbody > tr:nth-child(odd) > th {
+        background-color: #f7f7f3;
+    }
+
+    th {
+        padding: 0 10px 10px;
+        text-align: left;
+    }
+
+    td { padding: 10px; }
+
+    tr { border-bottom: 1px dotted #AEADAD; }
+}
+
+::selection {
+    background: #FFF5B8;
+    color: #000;
+    display: block;
+}
+
+::-moz-selection {
+    background: #FFF5B8;
+    color: #000;
+    display: block;
+}
+
+.fluid-width-video-wrapper { margin-bottom: 40px; }
+
+.hidden {
+    text-indent: -9999px;
+    visibility: hidden;
+    display: none;
+}
+
+.clearfix {
+    &:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/* ============================================================ */
+/* General Appearance */
+/* ============================================================ */
+
+.button-square { margin-left: 10px; }
+.logo img { margin: 0; }
+.navigation a { font-weight: 400; }
 
 /* ============================================================ */
 /* Blog */
