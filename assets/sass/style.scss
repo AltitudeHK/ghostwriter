@@ -16,9 +16,13 @@ body {
     font-family: $primary_font;
 }
 
-h1,h2,h3,h4,h5,h6 { font-family: $secondary_font; }
+h1 { font-family: $secondary_font; }
 
-h4 { font-size: 1.3em }
+h2,h3,h4,h5,h6 {
+    text-transform: none;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
 
 .navigation ul {
     -webkit-margin-before: 0em;
@@ -153,6 +157,17 @@ table {
 .title a { font-weight: 300; }
 
 .content.padded { padding-bottom: 60px; }
+
+/* ============================================================ */
+/* Footer */
+/* ============================================================ */
+
+footer h6 {
+    font-family: $secondary_font;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
 
 /* ============================================================ */
 /* Ajax Container */
@@ -404,19 +419,6 @@ table {
 .previous-posts-link a {
     display: block;
     padding: 8px 11px;
-}
-
-/* ============================================================ */
-/* NProgress */
-/* ============================================================ */
-
-#nprogress .bar { background: $primary; }
-
-#nprogress .peg { box-shadow: 0 0 10px $primary, 0 0 5px $primary; }
-
-#nprogress .spinner-icon {
-    border-top-color: $primary;
-    border-left-color: $primary;
 }
 
 /* ============================================================ */

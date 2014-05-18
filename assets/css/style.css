@@ -4,11 +4,13 @@
 body {
   font-family: "Merriweather", arial, sans-serif; }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: "Open Sans", arial, sans-serif; }
 
-h4 {
-  font-size: 1.3em; }
+h2, h3, h4, h5, h6 {
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 600; }
 
 .navigation ul {
   -webkit-margin-before: 0em;
@@ -128,6 +130,15 @@ table {
 
 .content.padded {
   padding-bottom: 60px; }
+
+/* ============================================================ */
+/* Footer */
+/* ============================================================ */
+footer h6 {
+  font-family: "Open Sans", arial, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em; }
 
 /* ============================================================ */
 /* Ajax Container */
@@ -349,19 +360,6 @@ table {
 .previous-posts-link a {
   display: block;
   padding: 8px 11px; }
-
-/* ============================================================ */
-/* NProgress */
-/* ============================================================ */
-#nprogress .bar {
-  background: #4fc1e9; }
-
-#nprogress .peg {
-  box-shadow: 0 0 10px #4fc1e9, 0 0 5px #4fc1e9; }
-
-#nprogress .spinner-icon {
-  border-top-color: #4fc1e9;
-  border-left-color: #4fc1e9; }
 
 /* ============================================================ */
 /* Disqus

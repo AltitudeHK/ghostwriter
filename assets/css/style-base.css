@@ -191,7 +191,6 @@ a, a:visited { font-weight: 400; text-decoration: none; }
 
 .dark .border { background: #fff; }
 
-
 /* =Navigation
 -------------------------------------------------------------- */
 
@@ -203,6 +202,10 @@ nav {
 	border-bottom: 2px solid #f0f0f0;
 	padding: 10px 0px;
 	z-index: 999;
+}
+
+nav ul li {
+	margin: 4px 0px 0px;
 }
 
 .logo {
