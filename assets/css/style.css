@@ -236,6 +236,9 @@ footer h6 {
 .page-title {
   margin: 15px 40px; }
 
+.post-date {
+  text-align: center; }
+
 .post-date,
 .blog-description {
   font-family: "Lato", arial, sans-serif;
