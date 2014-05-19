@@ -144,7 +144,7 @@ footer h6 {
 /* Ajax Container */
 /* ============================================================ */
 #ajax-container {
-  padding-top: 50px; }
+  padding: 40px 0px; }
 
 /* ============================================================ */
 /* Site Header */
@@ -204,6 +204,14 @@ footer h6 {
     color: #4fc1e9; }
 
 /* ============================================================ */
+/* Sidebar */
+/* ============================================================ */
+.sidebar {
+  background: #ebebeb;
+  margin: 20px 0px;
+  padding: 20px; }
+
+/* ============================================================ */
 /* Post */
 /* ============================================================ */
 #latest-post {
@@ -213,9 +221,7 @@ footer h6 {
   margin: 0 40px; }
 
 .post-header {
-  margin: 0 0 30px;
-  padding: 0 0 20px;
-  text-align: center;
+  padding: 0 0 15px;
   text-transform: uppercase; }
 
 .post-title,
@@ -318,7 +324,6 @@ footer h6 {
   padding: 10px 0 0; }
 
 .post-stub {
-  border-bottom: 1px dotted #303030;
   margin: 0;
   position: relative; }
   .post-stub:first-child {
@@ -331,7 +336,7 @@ footer h6 {
     color: #424242;
     padding: 20px 5px; }
     .post-stub a:hover {
-      background: #fafdff;
+      background: #dcf5ff;
       color: #4fc1e9;
       padding: 20px 12px; }
       .post-stub a:hover .post-stub-tag {
