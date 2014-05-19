@@ -320,7 +320,18 @@ footer h6 {
 
     span { font-weight: 600; }
 
-    a:hover { color: white; background-color: $secondary; }
+    a {
+        color: white !important;
+        background-color: $primary !important;
+        padding: 4px !important;
+        display: inline !important;
+        border-radius: 5px;
+    }
+
+    a:hover {
+        color: white !important;
+        background-color: $secondary !important;
+    }
 }
 
 .post-tags {
@@ -386,7 +397,14 @@ footer h6 {
     margin: 0;
     position: relative;
 
+    p { margin: 0; }
+
     &:first-child { padding-top: 0; }
+
+    .post-tags {
+        padding-bottom: 20px;
+        span { padding: 0 5px; }
+    }
 
     a {
         -webkit-transition: all 0.2s ease-in-out;

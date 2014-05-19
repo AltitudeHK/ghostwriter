@@ -3,21 +3,33 @@
 <div class="container">
     <h1 class="page-title">Posts tagged: {{tag.name}}</h1>
 
-    <ol class="post-list">
+    <div class="grid-4">
+      <ol class="post-list">
         {{#foreach posts}}
-            <li class="post-stub {{post_class}}" >
-                <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
-                    <h4 class="post-stub-title">{{title}}</h4>
-
-                    <time class="post-stub-date" datetime="{{published_at}}">Published {{date format="MMMM Do YYYY"}}</time>
-
-                    {{#if featured}}
-                        <span class="post-stub-tag">Featured</span>
-                    {{/if}}
-                </a>
-            </li>
+          <li class="post-stub clearfix {{post_class}}" >
+            <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
+              <div class="post-header">
+                <h2 class="post-stub-title">{{title}}</h2>
+                <time class="post-stub-date" datetime="{{published_at}}">{{date format="D MMMM YYYY"}}</time>
+              </div>
+              <div class="post-excerpt">
+                <p>{{excerpt}}&hellip;</p>
+              </div>
+            </a>
+            <div class="post-tags">
+              <span>Tagged:</span>
+              {{#if tags}}
+                {{tags separator=" "}}
+              {{/if}}
+            </div>
+          </li>
         {{/foreach}}
-    </ol>
+      </ol>
+    </div>
+    <div class="sidebar grid-2">
+      <p><a href="http://www.altitudehk.com">Altitude</a> is a web and mobile development consultancy based in Hong Kong. We make things happen for corporates and startups in Asia.</p>
+      <p>We seek every opportunity to write, teach and speak about what we do. We want to be part of shaping the tech community in Asia.</p>
+    </div>
 
     <div class="post-navigation">
         {{pagination}}

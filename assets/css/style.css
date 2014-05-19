@@ -271,10 +271,17 @@ footer h6 {
   .post-tags span,
   .share span {
     font-weight: 600; }
+  .post-tags a,
+  .share a {
+    color: white !important;
+    background-color: #4fc1e9 !important;
+    padding: 4px !important;
+    display: inline !important;
+    border-radius: 5px; }
   .post-tags a:hover,
   .share a:hover {
-    color: white;
-    background-color: #303030; }
+    color: white !important;
+    background-color: #303030 !important; }
 
 .post-tags {
   float: left;
@@ -329,8 +336,14 @@ footer h6 {
 .post-stub {
   margin: 0;
   position: relative; }
+  .post-stub p {
+    margin: 0; }
   .post-stub:first-child {
     padding-top: 0; }
+  .post-stub .post-tags {
+    padding-bottom: 20px; }
+    .post-stub .post-tags span {
+      padding: 0 5px; }
   .post-stub a {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
