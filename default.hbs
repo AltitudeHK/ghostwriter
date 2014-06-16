@@ -14,12 +14,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{! Styles }}
+    <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:300,400,600,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Gudea:400">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/fonts.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.min.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/960_12_col.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/slabtext.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/responsiveslides.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/grid_responsive.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/nprogress.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/grid.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/colors/aqua-blue.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/style-base.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic" />
@@ -30,50 +37,46 @@
 </head>
 <body class="{{body_class}}">
   <!-- Begin Navigation -->
-  <nav class="clearfix">
-
-    <!-- Logo -->
-    <div class="logo">
-      <a id="top" href="http://www.altitudehk.com"><img src="/assets/images/logo.png" height="40" alt="Altitude"></a>
-    </div>
-
-    <!-- Mobile Nav Button -->
-    <button type="button" class="nav-button" data-toggle="collapse" data-target=".nav-content">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <!-- Navigation Links -->
-      <div class="navigation">
-      <ul class="nav-content">
-
-        <li><a href="http://altitudehk.com/#hello">Hello</a></li>
-        <li><a href="http://altitudehk.com/#about">About</a></li>
-        <li><a href="http://altitudehk.com/#services">Services</a></li>
-        <li><a href="http://altitudehk.com/#work">Work</a></li>
-        <li><a href="http://altitudehk.com/#team">Team</a></li>
-        <li><a href="http://altitudehk.com/#advisors">Advisors</a></li>
-        <li><a class="active" href="http://blog.altitudehk.com">Blog</a></li>
+  <div id="mobile-nav-container">
+    <div id="mobile-nav">
+      <span class="logo"><a href="/"><img src="{{asset "images/altitude-logo-white.png"}}" alt="Altitude Labs"></a></span>
+      <div id="mobile-nav-icon"><i class="fa fa-bars"></i></div>
+      <div class="clear"></div>
+      <ul>
+        <li class="prevent-default" data-section="top"><a href="#">Top</a></li>
+        <li><a href="http://altitudehk.com">Work</a></li>
+        <li><a href="http://altitudehk.com/team">Team</a></li>
+        <li><a href="http://altitudehk.com/careers">Careers</a></li>
+        <li><a href="http://blog.altitudehk.com">Blog</a></li>
+        <li><a href="http://altitudehk.com/contact">Let's Talk</a></li>
       </ul>
     </div>
+  </div>
 
+  <nav id="top-nav">
+    <div class="container_12">
+      <div class="grid_12">
+        <span class="logo"><a href="/"><img src="{{asset "images/altitude-logo-white.png"}}" alt="Altitude Labs"></a></span>
+        <ul>
+          <li><a href="http://altitudehk.com">Work</a></li>
+          <li><a href="http://altitudehk.com/team">Team</a></li>
+          <li><a href="http://altitudehk.com/careers">Careers</a></li>
+          <li><a href="http://blog.altitudehk.com">Blog</a></li>
+          <li><a href="http://altitudehk.com/contact">Let's Talk</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <!-- Begin Blog -->
-  <section id="blog" class="parallax-bg2 parallax colored clearfix">
-    <div class="content dark padded container">
-
-      <!-- Text -->
-      <div class="title grid-full">
-        <h1>
-          <a href="{{@blog.url}}">Altitude <em>Blog</em></a>
-          <a class="button-square" href="{{@blog.url}}/rss"><i class="fa fa-rss"></i></a>
-        </h1>
-      </div>
-
+  <section id="blog">
+    <!-- Text -->
+    <div class="title container_12">
+      <h1>
+        <a href="{{@blog.url}}">Altitude Blog</a>
+        <a class="button-square" href="{{@blog.url}}/rss"><i class="fa fa-rss"></i></a>
+      </h1>
     </div>
-
   </section>
   <!-- End Blog -->
 
@@ -81,56 +84,11 @@
       {{{body}}}
   </div>
 
-  <!-- Begin Footer -->
-  <footer id="footer" class="clearfix">
-    <div class="content dark container">
-      <div class="site-title-wrapper">
-        <h1 class="site-title">
-        <a class="js-ajax-link" title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a>
-        <a class="button-square button-jump-top js-jump-top" href="#"><i class="fa fa-angle-up"></i></a>
-      </h1>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <!-- Social Links -->
-      <ul class="social-links grid-full">
-        <!-- <li><a href="http://facebook.com" target="_blank"><img src="images/icons/facebook-large.png" alt="facebook" width="36" height="36"></a></li>
-        <li><a href="http://twitter.com" target="_blank"><img src="images/icons/twitter-large.png" alt="twitter" width="36" height="36"></a></li> -->
-
-        <!-- Dribble
-        <li><a href="http://dribbble.com" target="_blank"><img src="images/icons/dribbble-large.png" alt="dribbble" width="36" height="36"></a></li>
-        -->
-
-        <!-- LinkedIn
-        <li><a href="http://linkedin.com" target="_blank"><img src="images/icons/linkedin-large.png" alt="linkedin" width="36" height="36"></a></li>
-        -->
-
-        <!-- YouTube
-        <li><a href="http://youtube.com" target="_blank"><img src="images/icons/youtube-large.png" alt="youtube" width="36" height="36"></a></li>
-        -->
-
-        <!-- Vimeo
-        <li><a href="http://vimeo.com" target="_blank"><img src="images/icons/vimeo-large.png" alt="vimeo" width="36" height="36"></a></li>
-        -->
-
-        <!-- Flickr
-        <li><a href="http://flickr.com" target="_blank"><img src="images/icons/flickr-large.png" alt="flickr" width="36" height="36"></a></li>
-        -->
-
-        <!-- RSS
-        <li><a href="http://rss.com" target="_blank"><img src="images/icons/rss-large.png" alt="rss" width="36" height="36"></a></li>
-        -->
-
-        <!-- Google Plus
-        <li><a href="http://google.com" target="_blank"><img src="images/icons/google-large.png" alt="google" width="36" height="36"></a></li>
-        -->
-      </ul>
-
-      <!-- Copyright Info -->
-      <div class="copyright grid-full"><h6>&copy; {{date format="YYYY"}} Altitude HK. All rights reserved.</h6></div>
-
+  <footer>
+    <div class="container_12">
+      &copy; {{date format="YYYY"}} Altitude Labs. All Rights Reserved.
+      <a href="https://twitter.com/altitudelabs"><i class="social-icon fa fa-lg fa-twitter"></i></a>
+      <a href="http://facebook.com/altitudelabs"><i class="social-icon fa fa-lg fa-facebook"></i></a>
     </div>
   </footer>
 
@@ -150,12 +108,10 @@
   </script>
   <!-- End Google Analytics -->
 
-  <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
-  <script type="text/javascript" src="{{asset "js/waypoints.js"}}"></script>
-  <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-  <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-  <script type="text/javascript" src="{{asset "js/navigation.js"}}"></script>
-  <script type="text/javascript" src="{{asset "js/scripts.js"}}"></script>
+  <script src="{{ asset "js/jquery-1.8.3.min.js"}}"></script>
+  <script src="{{ asset "js/prism.js"}}"></script>
+  <script src="{{ asset "js/resources.js"}}"></script>
+  <script src="{{ asset "js/app.js"}}"></script>
 
 </body>
 </html>

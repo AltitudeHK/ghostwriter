@@ -1,6 +1,6 @@
 {{!< default}}
 
-<div id="latest-post" class="container">
+<div id="latest-post" class="container_12">
   {{#foreach posts}}
     {{#if @first}}
       {{> post-content}}
@@ -8,13 +8,13 @@
   {{/foreach}}
 </div>
 
-<div id="post-index" class="container">
-  <div class="grid-4">
+<div id="post-index" class="container_12">
+  <div class="grid_8">
     <ol class="post-list">
       {{#foreach posts}}
         <li class="post-stub clearfix {{post_class}}" >
           <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
-            <div class="post-header">
+            <div class="post-stub-header">
               <h2 class="post-stub-title">{{title}}</h2>
               <time class="post-stub-date" datetime="{{published_at}}">{{date format="D MMMM YYYY"}}</time>
             </div>
@@ -32,9 +32,9 @@
       {{/foreach}}
     </ol>
   </div>
-  <div class="sidebar grid-2">
-    <p><a href="http://www.altitudehk.com">Altitude</a> is a web and mobile development consultancy based in Hong Kong. We make things happen for corporates and startups in Asia.</p>
-    <p>We seek every opportunity to write, teach and speak about what we do. We want to be part of shaping the tech community in Asia.</p>
+  <div class="sidebar grid_4">
+    <p><a href="http://www.altitudehk.com">Altitude Labs</a> is a team of designers and developers. We are a Silicon Valley styled one-stop shop for turning digital ideas into reality.</p>
+    <p>We seek every opportunity to write, teach and speak about what we do. In doing so, we want to be part of shaping the tech community in Asia.</p>
   </div>
 
   <div class="post-navigation">
