@@ -273,14 +273,17 @@ footer {
   margin: 25px 0 0; }
   .post-date:after,
   .blog-description:after {
-    border-bottom: 5px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
     content: "";
     display: block;
     margin: 40px auto 0;
     width: 100px; }
 
+.post-content a {
+  color: rgb(100,100,100);
+}
 .post-content a:hover {
-  border-bottom: 1px dotted #ffd41d;
+  border-bottom: 1px dotted rgb(100,100,100);
   padding: 0 0 2px; }
 .post-content ul, .post-content ol {
   font-size: 16px;
@@ -424,6 +427,13 @@ footer {
 /* ============================================================ */
 /* Media Queries */
 /* ============================================================ */
+
+@media only screen and (max-width: 969px) {
+  section#blog {
+    padding-top: 120px;
+  }
+}
+
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
   .post-stub-tag {
