@@ -11,10 +11,52 @@ var AltitudeBlog = {
     this.initScroll();
   },
   initIsotope: function() {
-
+    var $container = $('#fluid-post-index');
+    var yGutter = 10;
+    var xGutter = 10;
+    var colWidth = function () {
+      var w = $container.width(),
+        columnNum = 1,
+        columnWidth = 0;
+      if (w > 1200) {
+        columnNum  = 4;
+      } else if (w > 900) {
+        columnNum  = 3;
+      } else if (w > 600) {
+        columnNum  = 2;
+      } else if (w > 300) {
+        columnNum  = 1;
+      }
+      columnWidth = Math.floor(w/columnNum);
+      $container.find('.post').each(function() {
+        var $post = $(this),
+          multiplier_w = $post.attr('class').match(/post-w(\d)/),
+          multiplier_h = $post.attr('class').match(/post-h(\d)/),
+          width = multiplier_w ? columnWidth*multiplier_w[1]-yGutter : columnWidth-yGutter,
+          height = multiplier_h ? columnWidth*multiplier_h[1]*0.5-yGutter : columnWidth*0.5-yGutter;
+        $post.css({
+          width: width,
+          height: height
+        });
+      });
+      return columnWidth;
+    };
+    var isotope = function () {
+      $container.isotope({
+        resizable: false,
+        itemSelector: '.post',
+        masonry: {
+          columnWidth: colWidth(),
+          gutterWidth: xGutter
+        }
+      });
+    };
+    isotope();
+    $(window).smartresize(isotope);
   },
   initScroll: function() {
-    /* Detects if device is mobile */
+
+    // Detects if device is mobile
     $.browser.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
     /*
@@ -46,7 +88,7 @@ var AltitudeBlog = {
 
     };
 
-    /* Scrolling */
+    // Scroll up functionality
     var $nav = $('#top-nav, #float-nav, #mobile-nav');
     $nav.find('.prevent-default, .go-to-top').click(function(e) {
       e.preventDefault();
@@ -66,7 +108,7 @@ var AltitudeBlog = {
     });
 
     $(window).scroll(function() {
-      // display and hide floating nav
+      // Display and hide floating nav
       if ($(document).scrollTop() <= 87) {
         $floatNav.stop(true, true).css({'margin-top': '-80px'});
         $goToTop.css({'display': 'none'});

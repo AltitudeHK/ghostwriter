@@ -12,10 +12,10 @@
 </section>
 <!-- End Blog Header -->
 
-<div id="post-index" class="container_12">
+<div id="fluid-post-index">
   {{#foreach posts}}
-    <div class="grid_4">
-      <li class="post-stub clearfix {{post_class}}" >
+    <article class="post post-w1 post-h2 {{post_class}}">
+      <li class="post-stub clearfix">
         <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
           <div class="post-stub-header">
             {{content words="0"}}
@@ -23,17 +23,15 @@
             <time class="post-stub-date" datetime="{{published_at}}">{{date format="D MMMM YYYY"}}</time>
           </div>
         </a>
-        <div class="post-tags">
-          {{#if tags}}
-            {{tags separator=" "}}
-          {{/if}}
-        </div>
       </li>
-    </div>
+      <div class="post-tags">
+        {{#if tags}}
+          {{tags separator=" "}}
+        {{/if}}
+      </div>
+    </article>
   {{/foreach}}
-  <div class="clearfix"></div>
-  <div class="post-navigation">
-    {{pagination}}
-  </div>
 </div>
-
+<div class="post-navigation">
+  {{pagination}}
+</div>

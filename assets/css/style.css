@@ -22,8 +22,8 @@ h2, h3, h4, h5, h6 {
   font-weight: 600; }
 
 h2 {
-  font-size: 40px;
-  line-height: 42px; }
+  font-size: 50px;
+  line-height: 50px; }
 
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   font-family: "Merriweather", "Times New Roman", serif; }
@@ -162,6 +162,7 @@ footer {
 /* Ajax Container */
 /* ============================================================ */
 #ajax-container {
+  background-color: #ebebeb;
   padding: 0px 0px 40px; }
 
 /* ============================================================ */
@@ -220,6 +221,33 @@ footer {
   margin: 0 10px; }
   .site-nav-item a:hover {
     color: #ffd41d; }
+
+/* ============================================================ */
+/* Isotope */
+/* ============================================================ */
+#fluid-post-index .post {
+  float: left;
+  width: 20%;
+  height: 159px;
+  margin: 0 5px 10px;
+  background-color: #fff;
+  overflow: hidden; }
+  #fluid-post-index .post:hover {
+    background-color: #ffd41d; }
+#fluid-post-index .post-w2 {
+  width: 40%; }
+#fluid-post-index .post-h2 {
+  height: 322px; }
+#fluid-post-index .post-h3 {
+  height: 485px; }
+
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  transition-property: transform, opacity; }
 
 /* ============================================================ */
 /* Sidebar */
@@ -292,7 +320,7 @@ footer {
 .post-tags,
 .share {
   color: #AEADAD;
-  font-size: 14px; }
+  font-size: 12px; }
   .post-tags span,
   .share span {
     font-weight: 600; }
@@ -301,15 +329,17 @@ footer {
     color: white !important;
     background-color: #1f1f1f !important;
     padding: 6px 8px !important;
-    display: inline !important;
-    border-radius: 0px;
-    line-height: 33px; }
+    margin: 2px 2px;
+    display: inline-block;
+    border-radius: 0px; }
   .post-tags a:hover,
   .share a:hover {
     background-color: #646464 !important; }
 
 .post-tags {
-  float: left;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   margin: 3px 10px 0; }
 
 .share {
@@ -369,8 +399,6 @@ footer {
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out; }
-  .post-stub:hover {
-    background-color: #ffd41d; }
   .post-stub p {
     margin: 0; }
   .post-stub .post-tags {
@@ -386,8 +414,6 @@ footer {
   .post-stub a {
     display: block;
     color: #1f1f1f; }
-    .post-stub a:hover {
-      color: #1f1f1f; }
 
 .post-stub-header {
   padding: 0 0 20px;
