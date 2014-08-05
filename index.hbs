@@ -1,43 +1,39 @@
 {{!< default}}
 
-<div id="latest-post" class="container_12">
-  {{#foreach posts}}
-    {{#if @first}}
-      {{> post-content}}
-    {{/if}}
-  {{/foreach}}
-</div>
+<!-- Begin Blog Header -->
+<section id="blog">
+  <!-- Text -->
+  <div class="title container_12">
+    <h1>
+      <a href="{{@blog.url}}">Altitude Blog</a>
+      <a class="button-square" href="{{@blog.url}}/rss"><i class="fa fa-rss"></i></a>
+    </h1>
+  </div>
+</section>
+<!-- End Blog Header -->
 
 <div id="post-index" class="container_12">
-  <div class="grid_8">
-    <ol class="post-list">
-      {{#foreach posts}}
-        <li class="post-stub clearfix {{post_class}}" >
-          <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
-            <div class="post-stub-header">
-              <h2 class="post-stub-title">{{title}}</h2>
-              <time class="post-stub-date" datetime="{{published_at}}">{{date format="D MMMM YYYY"}}</time>
-            </div>
-            <div class="post-excerpt">
-              <p>{{excerpt}}&hellip;</p>
-            </div>
-          </a>
-          <div class="post-tags">
-            <span>Tagged:</span>
-            {{#if tags}}
-              {{tags separator=" "}}
-            {{/if}}
+  {{#foreach posts}}
+    <div class="grid_4">
+      <li class="post-stub clearfix {{post_class}}" >
+        <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
+          <div class="post-stub-header">
+            {{content words="0"}}
+            <h2 class="post-stub-title">{{title}}</h2>
+            <time class="post-stub-date" datetime="{{published_at}}">{{date format="D MMMM YYYY"}}</time>
           </div>
-        </li>
-      {{/foreach}}
-    </ol>
+        </a>
+        <div class="post-tags">
+          {{#if tags}}
+            {{tags separator=" "}}
+          {{/if}}
+        </div>
+      </li>
+    </div>
+  {{/foreach}}
     <div class="post-navigation">
       {{pagination}}
     </div>
-  </div>
-  <div class="sidebar grid_4">
-    <p><a href="http://www.altitudelabs.com">Altitude Labs</a> is a team of designers and developers. We are a Silicon Valley styled one-stop shop for turning digital ideas into reality.</p>
-    <p>We seek every opportunity to write, teach and speak about what we do. In doing so, we want to be part of shaping the tech community in Asia.</p>
   </div>
 </div>
 

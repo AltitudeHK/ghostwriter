@@ -91,7 +91,7 @@ hr {
 
   #float-nav .go-to-top {
     background-color:#ffd41d;
-    background-image:url(../img/top-arrow-dark.png);
+    background-image: url(../images/top-arrow-dark.png);
     background-position: center center;
     background-repeat:no-repeat;
   }

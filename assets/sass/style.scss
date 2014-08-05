@@ -30,13 +30,19 @@ h1 {
 }
 
 h2,h3,h4,h5,h6 {
-  font-family: $primary_font;
-  font-size: 1.5em;
+  font-family: $secondary_font;
+  font-size: 20px;
   text-transform: none;
   font-weight: 600;
 }
 
-h2 { font-size: 2em; line-height: 1.5em; }
+h2 { font-size: 40px; line-height: 42px; }
+
+.post-content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $primary-font;
+  }
+}
 
 .navigation ul {
   -webkit-margin-before: 0em;
@@ -85,7 +91,7 @@ blockquote {
 
 img {
   display: block;
-  margin: 40px 0;
+  margin: 20px 0;
   width: auto;
   max-width: 100%;
 }
@@ -121,16 +127,6 @@ table {
   td { padding: 10px; }
 
   tr { border-bottom: 1px dotted #AEADAD; }
-}
-
-::selection {
-  color: #000;
-  display: block;
-}
-
-::-moz-selection {
-  color: #000;
-  display: block;
 }
 
 .fluid-width-video-wrapper { margin-bottom: 40px; }
@@ -174,6 +170,7 @@ table {
 
 section#blog {
   padding: 60px 0px;
+  margin-bottom: 30px;
   background-color: $primary;
 
   h1 { padding:0; margin: 0; }
@@ -199,7 +196,7 @@ footer {
 /* ============================================================ */
 
 #ajax-container {
-  padding: 40px 0px;
+  padding: 0px 0px 40px;
 }
 
 /* ============================================================ */
@@ -286,7 +283,10 @@ footer {
 
 #latest-post { display: none; }
 
-.post-container { margin: 0 40px; }
+.post-container,
+.page-container {
+  margin: 50px 40px;
+}
 
 .post-header {
   padding: 0 0 40px;
@@ -295,7 +295,8 @@ footer {
 
 .post-title,
 .page-title {
-  font-size: 52px;
+  font-size: 72px;
+  line-height: 70px;
   font-weight: 300;
   margin: 15px 0;
   letter-spacing: 1px;
@@ -349,23 +350,21 @@ footer {
   span { font-weight: 600; }
 
   a {
-  color: white !important;
-  background-color: $secondary !important;
-  padding: 6px 8px !important;
-  display: inline !important;
-  border-radius: 0px;
+    color: white !important;
+    background-color: $secondary !important;
+    padding: 6px 8px !important;
+    display: inline !important;
+    border-radius: 0px;
   }
 
   a:hover {
-  background-color: $primary !important;
-  color: $secondary !important;
-  font-weight: 700;
+    background-color: rgb(100,100,100) !important;
   }
 }
 
 .post-tags {
   float: left;
-  margin: 3px 0 0;
+  margin: 3px 10px 0;
 }
 
 .share {
@@ -416,6 +415,10 @@ footer {
 /* Post Index */
 /* ============================================================ */
 
+#post-index {
+  margin-top: 50px;
+}
+
 .post-list {
   list-style: none;
   margin: 10px 40px 0;
@@ -423,33 +426,40 @@ footer {
 }
 
 .post-stub {
-  margin: 0;
+  margin: 0 0 20px;
+  padding: 0;
   position: relative;
 
+  -webkit-transition: background-color 300ms ease-out;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+
+  &:hover {
+    background-color: $primary;
+  }
+
   p { margin: 0; }
-
-  &:first-child { padding-top: 0; }
-
   .post-tags {
     padding: 20px 0px;
     span { padding: 0 5px; }
   }
 
+  img {
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   a {
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
     display: block;
     color: $secondary;
-    padding: 20px 5px;
-
     &:hover {
-      background: $primary;
       color: $secondary;
-      padding: 20px 12px;
-
-      .post-stub-tag { background: $primary; }
     }
+
   }
 }
 
@@ -471,11 +481,12 @@ footer {
 
 .post-stub-title {
   display: inline-block;
-  margin: 0;
+  margin: 20px 10px 0px;
   text-transform: none;
 }
 
 .post-stub-date {
+  margin: 0 10px;
   display: inline-block;
   &:before { content: "/ "; }
 }
@@ -498,8 +509,13 @@ footer {
 /* Media Queries */
 /* ============================================================ */
 
+@media only screen and (max-width: 959px) {
+  #ajax-container { margin-top: 66px; }
+}
+
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+
   .post-stub-tag { display: none; }
 
   .site-nav-item {

@@ -1,0 +1,21 @@
+{
+  "name": "altitudelabs-blog",
+  "version": "1.0.0",
+  "homepage": "https://github.com/altitudelabs/ghostwriter",
+  "authors": [
+    "jyek <justinyek@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "isotope": "~2.0.0",
+    "font-awesome": "~4.1.0"
+  }
+}

@@ -8,6 +8,7 @@
     {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
+    <meta name="keywords" content="digital strategy, growth hacking, entrepreneurship, lean startup, design thinking, technology, rapid prototyping, Javascript, Angular" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
@@ -20,10 +21,8 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Gudea:400">
     <link rel="stylesheet" type="text/css" href="{{asset "css/fonts.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}">
-
     <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.min.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "css/960_12_col.css"}}">
-    <link rel="stylesheet" type="text/css" href="{{asset "css/slabtext.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "css/responsiveslides.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "css/grid_responsive.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
@@ -36,6 +35,10 @@
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
+  <!-- important to have this on top -->
+  <section id="top"></section>
+  <!-- /// -->
+
   <!-- Begin Navigation -->
   <div id="mobile-nav-container">
     <div id="mobile-nav">
@@ -53,6 +56,22 @@
     </div>
   </div>
 
+  <nav id="float-nav">
+    <div class="container_12">
+      <div class="grid_12">
+        <span class="logo"><a href="/"><img src="{{asset "images/altitude-logo-white.png"}}" alt="Altitude Labs"></a></span>
+        <span class="go-to-top fadeIn" data-section="top"></span>
+        <ul>
+          <li><a href="/">Work</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="http://blog.altitudelabs.com">Blog</a></li>
+          <li><a href="/contact">Let's Talk</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <nav id="top-nav">
     <div class="container_12">
       <div class="grid_12">
@@ -67,18 +86,6 @@
       </div>
     </div>
   </nav>
-
-  <!-- Begin Blog -->
-  <section id="blog">
-    <!-- Text -->
-    <div class="title container_12">
-      <h1>
-        <a href="{{@blog.url}}">Altitude Blog</a>
-        <a class="button-square" href="{{@blog.url}}/rss"><i class="fa fa-rss"></i></a>
-      </h1>
-    </div>
-  </section>
-  <!-- End Blog -->
 
   <div id="ajax-container">
       {{{body}}}
