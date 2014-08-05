@@ -302,7 +302,8 @@ footer {
     background-color: #1f1f1f !important;
     padding: 6px 8px !important;
     display: inline !important;
-    border-radius: 0px; }
+    border-radius: 0px;
+    line-height: 33px; }
   .post-tags a:hover,
   .share a:hover {
     background-color: #646464 !important; }
