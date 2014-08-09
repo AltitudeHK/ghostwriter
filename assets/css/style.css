@@ -261,6 +261,11 @@ footer {
 .post-container,
 .page-container {
   margin: 50px 40px; }
+  .post-container h2,
+  .page-container h2 {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700; }
 
 .post-header {
   padding: 0 0 40px;
