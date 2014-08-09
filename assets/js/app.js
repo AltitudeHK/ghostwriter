@@ -12,6 +12,7 @@ var AltitudeBlog = {
   },
   initIsotope: function() {
     var $container = $('.fluid-post-index');
+    var $loader = $('.loader');
     var item = '.post-stub';
     var yGutter = 1;
     var xGutter = 0;
@@ -49,7 +50,11 @@ var AltitudeBlog = {
         }
       });
     };
-    $(window).load(function(){ isotope(); });
+    $(window).load(function(){
+      isotope();
+      $container.css('opacity', '1');
+      $loader.css('opacity', '0');
+    });
     $(window).smartresize(isotope);
   },
   initScroll: function() {
