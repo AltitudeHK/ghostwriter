@@ -12,6 +12,7 @@ $green: #1F8A70;
 $red: #BD4932;
 $pink: #FF358B;
 $blue: #3498DB;
+$orange: #FD7400;
 
 /* ============================================================ */
 /* Base */
@@ -529,14 +530,22 @@ footer {
     line-height: 25px;
     margin-bottom: 20px;
   }
-}
 
-.post-tags {
-  margin-bottom: 15px;
-  a {
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 700;
+  .post-stub-share {
+    float: right;
+    a {
+      color: #fff;
+      display: inline-block;
+      font-size: 12px;
+      background-color: rgb(160,160,160);
+      width: 20px;
+      padding-top: 2px;
+      margin-right: 2px;
+      line-height: 18px;
+      text-align: center;
+
+      &:hover { background-color: #000 !important; }
+    }
   }
 }
 
@@ -545,20 +554,30 @@ footer {
 }
 
 .tag-ideas .post-tags a { background-color: $pink !important; }
-.tag-development .post-tags a { background-color: #000 !important; }
+.tag-development .post-tags a { background-color: $orange !important; }
 .tag-design .post-tags a { background-color: $red !important; }
 .tag-culture .post-tags a { background-color: $blue !important; }
 .tag-case-studies .post-tags a { background-color: $green !important; }
+
+.post-tags {
+  margin-bottom: 15px;
+  a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover { background-color: #000 !important; }
+  }
+}
 
 .post-stub:hover {
   background-color: $primary;
   color: #fff;
   a { color: #fff; }
 
-  -webkit-transition: background-color 0.8s ease-in-out;
-  -moz-transition: background-color 0.8s ease-in-out;
-  -o-transition: background-color 0.8s ease-in-out;
-  transition: background-color 0.8s ease-in-out;
+  -webkit-transition: background-color 0.6s ease-in-out;
+  -moz-transition: background-color 0.6s ease-in-out;
+  -o-transition: background-color 0.6s ease-in-out;
+  transition: background-color 0.6s ease-in-out;
 }
 
 .post-w2 {
@@ -579,6 +598,7 @@ footer {
 .post-stub-date {
   margin: 0;
   display: inline-block;
+  line-height: 25px;
 }
 
 .next-posts-link a,
