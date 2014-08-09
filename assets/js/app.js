@@ -9,6 +9,9 @@ var AltitudeBlog = {
 
     // Init scroll functionality
     this.initScroll();
+
+    // Init next and previous posts
+    this.initNextPrevPosts();
   },
   initIsotope: function() {
     var $container = $('.fluid-post-index');
@@ -56,6 +59,31 @@ var AltitudeBlog = {
       $loader.css('opacity', '0');
     });
     $(window).smartresize(isotope);
+  },
+  initNextPrevPosts: function(){
+    var curr = parseInt($('#curr-post-id').html()),
+        prevLink = $('.prev-post'),
+        nextLink = $('.next-post');
+
+    prevLink.hide();
+    nextLink.hide();
+
+    $.get('/ghost/api/v0.1/posts/', function(d){
+      if (d && Array.isArray(d.posts)){
+        for (var i = 0; i < d.posts.length; i++){
+          if(d.posts[i].id === curr) {
+            if (i < d.posts.length-1){
+              prevLink.attr('href', '/' + d.posts[i+1].slug);
+              prevLink.show();
+            }
+            if (i > 0){
+              nextLink.attr('href', '/' + d.posts[i-1].slug);
+              nextLink.show();
+            }
+          }
+        }
+      }
+    });
   },
   initScroll: function() {
 

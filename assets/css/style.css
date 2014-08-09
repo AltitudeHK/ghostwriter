@@ -393,6 +393,24 @@ footer {
 .page-number {
   display: none; }
 
+.prev-post, .next-post {
+  position: fixed;
+  top: 50%;
+  margin-top: -15px;
+  color: #a0a0a0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  .prev-post:hover, .next-post:hover {
+    color: #000; }
+
+.prev-post {
+  left: 5px; }
+
+.next-post {
+  right: 5px; }
+
 /* ============================================================ */
 /* Post Index */
 /* ============================================================ */
@@ -420,11 +438,6 @@ footer {
       width: 100%;
       padding: 0;
       margin: 0; }
-    .post-stub .post-stub-image a {
-      background-color: #ffd41d;
-      background-image: url("../images/plus.png");
-      background-repeat: no-repeat;
-      background-position: center center; }
     .post-stub .post-stub-image a:hover {
       opacity: 0.85;
       text-decoration: none; }
@@ -487,14 +500,14 @@ footer {
     .post-tags a:hover {
       background-color: #000 !important; }
 
-.post-stub:hover {
+.post-stub-container:hover {
   background-color: #ffd41d;
   color: #fff;
   -webkit-transition: background-color 0.6s ease-in-out;
   -moz-transition: background-color 0.6s ease-in-out;
   -o-transition: background-color 0.6s ease-in-out;
   transition: background-color 0.6s ease-in-out; }
-  .post-stub:hover a {
+  .post-stub-container:hover a {
     color: #fff; }
 
 .post-w2 {

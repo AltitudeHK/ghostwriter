@@ -469,6 +469,24 @@ footer {
 
 .page-number { display: none; }
 
+.prev-post, .next-post {
+  position: fixed;
+  top: 50%;
+  margin-top: -15px;
+  color: rgb(160,160,160);
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    color: #000;
+  }
+}
+.prev-post { left: 5px; }
+.next-post { right: 5px; }
+
 /* ============================================================ */
 /* Post Index */
 /* ============================================================ */
@@ -501,12 +519,6 @@ footer {
       width: 100%;
       padding: 0;
       margin: 0;
-    }
-    a {
-      background-color: $primary;
-      background-image: url('../images/plus.png');
-      background-repeat: no-repeat;
-      background-position: center center;
     }
     a:hover {
       opacity: 0.85;
@@ -574,7 +586,7 @@ footer {
   }
 }
 
-.post-stub:hover {
+.post-stub-container:hover {
   background-color: $primary;
   color: #fff;
   a { color: #fff; }
