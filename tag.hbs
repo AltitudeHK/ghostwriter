@@ -3,30 +3,15 @@
 <div class="container_12">
   <div class="page-container">
     <h1 class="page-title">Posts tagged: {{tag.name}}</h1>
+  </div>
 
-    <div id="post-index" class="container_12">
-      {{#foreach posts}}
-        <div class="grid_4">
-          <li class="post-stub clearfix {{post_class}}" >
-            <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
-              <div class="post-stub-header">
-                {{content words="0"}}
-                <h2 class="post-stub-title">{{title}}</h2>
-                <time class="post-stub-date" datetime="{{published_at}}">{{date format="D MMMM YYYY"}}</time>
-              </div>
-            </a>
-            <div class="post-tags">
-              {{#if tags}}
-                {{tags separator=" "}}
-              {{/if}}
-            </div>
-          </li>
-        </div>
-      {{/foreach}}
-        <div class="post-navigation">
-          {{pagination}}
-        </div>
-      </div>
-    </div>
+  <div class="fluid-post-index">
+    {{#foreach posts}}
+      {{> post-stub }}
+    {{/foreach}}
+  </div>
+
+  <div class="post-navigation">
+    {{pagination}}
   </div>
 </div>

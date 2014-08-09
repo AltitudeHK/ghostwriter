@@ -2,36 +2,23 @@
 
 <!-- Begin Blog Header -->
 <section id="blog">
-  <!-- Text -->
   <div class="title container_12">
     <h1>
-      <a href="{{@blog.url}}">Altitude Blog</a>
+      <a href="{{@blog.url}}">blog</a>
       <a class="button-square" href="{{@blog.url}}/rss"><i class="fa fa-rss"></i></a>
     </h1>
   </div>
 </section>
 <!-- End Blog Header -->
 
-<div id="fluid-post-index">
-  {{#foreach posts}}
-    <article class="post post-w1 post-h2 {{post_class}}">
-      <li class="post-stub clearfix">
-        <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
-          <div class="post-stub-header">
-            {{content words="0"}}
-            <h2 class="post-stub-title">{{title}}</h2>
-            <time class="post-stub-date" datetime="{{published_at}}">{{date format="D MMMM YYYY"}}</time>
-          </div>
-        </a>
-      </li>
-      <div class="post-tags">
-        {{#if tags}}
-          {{tags separator=" "}}
-        {{/if}}
-      </div>
-    </article>
-  {{/foreach}}
+<div class="container_12">
+  <div class="fluid-post-index">
+    {{#foreach posts}}
+      {{> post-stub }}
+    {{/foreach}}
+  </div>
 </div>
+
 <div class="post-navigation">
   {{pagination}}
 </div>

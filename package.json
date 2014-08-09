@@ -1,4 +1,7 @@
 {
-	"name": "Altitude Labs Blog",
-	"version": "1.0.0"
+	"name": "altitude-labs-blog",
+	"version": "1.0.0",
+  "scripts": {
+    "start": "sass --watch assets/sass/style.scss:assets/css/style.css"
+  }
 }

@@ -1,0 +1,25 @@
+<article class="post-stub post-w1 {{post_class}}">
+  <div class="post-stub-image">
+    <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">
+      {{content words="0"}}
+    </a>
+  </div>
+  <div class="post-stub-container">
+    <div class="post-tags">
+      {{#if tags}}
+        {{tags separator=" "}}
+      {{/if}}
+    </div>
+    <div class="post-stub-header">
+      <h2 class="post-stub-title">
+        <a class="js-ajax-link"  title="{{title}} | {{@blog.title}}" href="{{url}}">{{title}}</a>
+      </h2>
+    </div>
+    <div class="post-excerpt">
+      {{excerpt words="30"}}
+    </div>
+    <div class="post-social">
+      <time class="post-stub-date" datetime="{{published_at}}">{{date format="D MMMM YYYY"}}</time>
+    </div>
+  </div>
+</article>

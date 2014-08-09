@@ -11,15 +11,16 @@ var AltitudeBlog = {
     this.initScroll();
   },
   initIsotope: function() {
-    var $container = $('#fluid-post-index');
-    var yGutter = 10;
-    var xGutter = 10;
+    var $container = $('.fluid-post-index');
+    var item = '.post-stub';
+    var yGutter = 1;
+    var xGutter = 0;
     var colWidth = function () {
       var w = $container.width(),
         columnNum = 1,
         columnWidth = 0;
       if (w > 1200) {
-        columnNum  = 4;
+        columnNum  = 3;
       } else if (w > 900) {
         columnNum  = 3;
       } else if (w > 600) {
@@ -28,15 +29,12 @@ var AltitudeBlog = {
         columnNum  = 1;
       }
       columnWidth = Math.floor(w/columnNum);
-      $container.find('.post').each(function() {
+      $container.find(item).each(function() {
         var $post = $(this),
           multiplier_w = $post.attr('class').match(/post-w(\d)/),
-          multiplier_h = $post.attr('class').match(/post-h(\d)/),
-          width = multiplier_w ? columnWidth*multiplier_w[1]-yGutter : columnWidth-yGutter,
-          height = multiplier_h ? columnWidth*multiplier_h[1]*0.5-yGutter : columnWidth*0.5-yGutter;
+          width = multiplier_w ? columnWidth*multiplier_w[1]-yGutter : columnWidth-yGutter;
         $post.css({
-          width: width,
-          height: height
+          width: width
         });
       });
       return columnWidth;
@@ -44,14 +42,14 @@ var AltitudeBlog = {
     var isotope = function () {
       $container.isotope({
         resizable: false,
-        itemSelector: '.post',
+        itemSelector: item,
         masonry: {
           columnWidth: colWidth(),
           gutterWidth: xGutter
         }
       });
     };
-    isotope();
+    $(window).load(function(){ isotope(); });
     $(window).smartresize(isotope);
   },
   initScroll: function() {

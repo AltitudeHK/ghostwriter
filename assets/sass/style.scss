@@ -2,12 +2,16 @@
 // Colours //
 // ============================================================ //
 
-$primary: #ffd41d;
+$primary: #FFD41D;
 $secondary: rgb(31,31,31);
 $background: #FEFEFE;
 $primary_font: 'Merriweather', 'Times New Roman', serif;
 $secondary_font: 'League Gothic', Arial, Helvetica, sans-serif;
 $tertiary_font: 'Gudea', Arial, Helvetica, sans-serif;
+$green: #1F8A70;
+$red: #BD4932;
+$pink: #FF358B;
+$blue: #3498DB;
 
 /* ============================================================ */
 /* Base */
@@ -21,6 +25,9 @@ $tertiary_font: 'Gudea', Arial, Helvetica, sans-serif;
 
 body {
   font-family: $primary_font;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
 a { text-decoration: none; }
@@ -33,10 +40,9 @@ h2,h3,h4,h5,h6 {
   font-family: $secondary_font;
   font-size: 20px;
   text-transform: none;
-  font-weight: 600;
 }
 
-h2 { font-size: 50px; line-height: 50px; }
+h2 { font-size: 40px; line-height: 40px; }
 
 .post-content {
   h1, h2, h3, h4, h5, h6 {
@@ -164,14 +170,17 @@ table {
   font-family: $tertiary_font;
 }
 
+.serif {
+  font-family: $primary_font;
+  font-style: italic;
+}
+
 /* ============================================================ */
 /* Blog */
 /* ============================================================ */
 
 section#blog {
-  padding: 60px 0px;
-  margin-bottom: 30px;
-  background-color: $primary;
+  padding: 50px 0px;
 
   h1 { padding:0; margin: 0; }
 }
@@ -196,8 +205,11 @@ footer {
 /* ============================================================ */
 
 #ajax-container {
-  background-color: rgb(235,235,235);
   padding: 0px 0px 40px;
+}
+
+.home-template #ajax-container, .tag-template #ajax-container {
+  background-color: rgb(240,240,240);
 }
 
 /* ============================================================ */
@@ -270,36 +282,16 @@ footer {
 /* Isotope */
 /* ============================================================ */
 
-#fluid-post-index {
-  .post {
-    float: left;
-    width: 20%;
-    height: 159px;
-    margin: 0 5px 10px;
-    background-color: #fff;
-    overflow: hidden;
-    &:hover {
-      background-color: $primary;
-    }
-  }
-  .post-w2 {
-    width: 40%;
-  }
-  .post-h2 {
-    height: 322px;
-  }
-  .post-h3 {
-    height: 485px;
-  }
-}
-
 .isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-  -moz-transition-duration: 0.8s;
-  transition-duration: 0.8s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;
   transition-property: transform, opacity;
+  -webkit-transition-property: -webkit-transform, background-color;
+  -moz-transition-property: -moz-transform, background-color;
+  transition-property: transform, background-color;
 }
 
 /* ============================================================ */
@@ -389,7 +381,7 @@ footer {
   a {
     color: white !important;
     background-color: $secondary !important;
-    padding: 6px 8px !important;
+    padding: 4px 8px !important;
     margin: 2px 2px;
     display: inline-block;
     border-radius: 0px;
@@ -398,13 +390,6 @@ footer {
   a:hover {
     background-color: rgb(100,100,100) !important;
   }
-}
-
-.post-tags {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  margin: 3px 10px 0;
 }
 
 .share {
@@ -455,10 +440,6 @@ footer {
 /* Post Index */
 /* ============================================================ */
 
-#post-index {
-  margin-top: 50px;
-}
-
 .post-list {
   list-style: none;
   margin: 10px 40px 0;
@@ -466,61 +447,102 @@ footer {
 }
 
 .post-stub {
-  margin: 0 0 20px;
+  margin: 0;
   padding: 0;
+  outline: 1px solid rgb(240,240,240);
   position: relative;
+  background-color: #fff;
+  float: left;
+  width: 20%;
 
-  -webkit-transition: background-color 300ms ease-out;
-  -moz-transition: background-color 300ms ease-out;
-  -o-transition: background-color 300ms ease-out;
-  transition: background-color 300ms ease-out;
-
-  p { margin: 0; }
-  .post-tags {
-    padding: 20px 0px;
-    span { padding: 0 5px; }
-  }
-
-  img {
-    overflow: hidden;
-    width: 100%;
-    padding: 0;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+  p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
   a {
     display: block;
     color: $secondary;
   }
+
+  .post-stub-image {
+    overflow: hidden;
+    img {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    a {
+      background-color: $primary;
+      background-image: url('../images/plus.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    a:hover {
+      opacity: 0.85;
+      text-decoration: none;
+    }
+    a:hover img {
+      -webkit-transform: scale(1.2, 1.2) rotate(0);
+      -webkit-transition-timing-function: ease;
+      -webkit-transition-duration: 300ms;
+      -moz-transform: scale(1.2, 1.2) rotate(0);
+      -moz-transition-timing-function: ease-in;
+      -moz-transition-duration: 300ms;
+      transform: scale(1.2, 1.2) rotate(0);
+      transition-timing-function: ease-in;
+      transition-duration: 300ms;
+      opacity: .5;
+    }
+  }
+
+  .post-tags {
+    margin-bottom: 15px;
+    a {
+      display: inline-block;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  .post-stub-container {
+    padding: 35px 20px;
+  }
+
+  .post-excerpt {
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+}
+
+.tag-ideas .post-tags a { background-color: $pink !important; }
+.tag-development .post-tags a { background-color: #000 !important; }
+.tag-design .post-tags a { background-color: $red !important; }
+.tag-culture .post-tags a { background-color: $blue !important; }
+.tag-case-studies .post-tags a { background-color: $green !important; }
+
+.post-stub:hover {
+  background-color: $primary;
+  color: #fff;
+  a { color: #fff; }
+}
+
+.post-w2 {
+  width: 40%;
 }
 
 .post-stub-header {
-  padding: 0 0 20px;
-  text-transform: uppercase;
-}
-
-.post-stub-tag {
-  background: $secondary;
-  border-radius: 3px;
-  color: #FFF;
-  float: right;
-  font-size: 10px;
-  margin: 7px 0 0;
-  padding: 0 5px;
+  padding: 0 0 30px;
   text-transform: uppercase;
 }
 
 .post-stub-title {
   display: inline-block;
-  margin: 20px 10px 0px;
-  text-transform: none;
+  margin: 20px 0px 0px;
+  text-transform: uppercase;
 }
 
 .post-stub-date {
-  margin: 0 10px;
+  margin: 0;
   display: inline-block;
-  &:before { content: "/ "; }
 }
 
 .next-posts-link a,
@@ -555,9 +577,7 @@ footer {
     margin: 15px 0;
   }
 
-  .post-stub-header {
-    text-align: center;
-  }
+  .post-stub h1, .post-stub h2 { text-align: left; }
 
   .post-stub-title { display: block; }
 
