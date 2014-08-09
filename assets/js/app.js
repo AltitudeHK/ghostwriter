@@ -61,25 +61,25 @@ var AltitudeBlog = {
     $(window).smartresize(isotope);
   },
   initNextPrevPosts: function(){
-    var curr = parseInt($('#curr-post-id').html()),
-        prevLink = $('.prev-post'),
-        nextLink = $('.next-post');
+    var curr = $('#curr-post-uuid').html(),
+        $prevLink = $('.prev-post'),
+        $nextLink = $('.next-post');
 
-    prevLink.hide();
-    nextLink.hide();
+    $prevLink.hide();
+    $nextLink.hide();
 
-    $.get('/ghost/api/v0.1/posts/', function(d){
-      if (d && Array.isArray(d.posts)){
-        for (var i = 0; i < d.posts.length; i++){
-          if(d.posts[i].id === curr) {
-            if (i < d.posts.length-1){
-              prevLink.attr('href', '/' + d.posts[i+1].slug);
-              prevLink.show();
-            }
-            if (i > 0){
-              nextLink.attr('href', '/' + d.posts[i-1].slug);
-              nextLink.show();
-            }
+    $.get('/rss', function(d){
+      var items = $(d).find('item');
+      for (var i = 0; i < items.length; i++){
+        var uuid = $(items[i]).find('guid').html();
+        if (uuid === curr){
+          if (i < items.length-1){
+            $prevLink.attr('href', $(items[i+1]).find('link').html());
+            $prevLink.show();
+          }
+          if (i > 0){
+            $nextLink.attr('href', $(items[i-1]).find('link').html());
+            $nextLink.show();
           }
         }
       }
