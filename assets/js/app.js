@@ -71,14 +71,14 @@ var AltitudeBlog = {
     $.get('/rss', function(d){
       var items = $(d).find('item');
       for (var i = 0; i < items.length; i++){
-        var uuid = $(items[i]).find('guid').html();
+        var uuid = $(items[i]).find('guid').text();
         if (uuid === curr){
           if (i < items.length-1){
-            $prevLink.attr('href', $(items[i+1]).find('link').html());
+            $prevLink.attr('href', $(items[i+1]).find('link').text());
             $prevLink.show();
           }
           if (i > 0){
-            $nextLink.attr('href', $(items[i-1]).find('link').html());
+            $nextLink.attr('href', $(items[i-1]).find('link').text());
             $nextLink.show();
           }
         }
