@@ -29,6 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a { text-decoration: none; }
@@ -156,8 +157,6 @@ table {
 /* General Appearance */
 /* ============================================================ */
 
-.button-square { margin-left: 20px; }
-
 .logo img { margin: 0; display: inherit; }
 
 .navigation a { font-weight: 400; }
@@ -186,9 +185,15 @@ section#blog {
   h1 { padding:0; margin: 0; }
 }
 
-.title { text-align: center; }
+.button-square {
+  font-size: 30px;
+  margin-left: -20px;
+}
 
-.content.padded { padding-bottom: 60px; }
+.title {
+  text-align: center;
+  letter-spacing: 15px;
+}
 
 /* ============================================================ */
 /* Footer */
@@ -625,6 +630,8 @@ footer {
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+
+  .title h1 { font-size: 60px; }
 
   .post-stub-tag { display: none; }
 
