@@ -1,21 +1,21 @@
 {{!< default}}
 
 <div class="container_12">
-    {{#post}}
-        <article class="post-container {{post_class}}">
-            <header class="post-header">
-                <h1 class="post-title">{{title}}</h1>
+  {{#post}}
+    <article class="post-container {{post_class}}">
+      <header class="post-header">
+        <h1 class="post-title">{{title}}</h1>
 
-                <p class="blog-description">{{@blog.description}}</p>
-            </header>
+        <p class="blog-description">{{@blog.description}}</p>
+      </header>
 
-            <div class="post-content">
-                {{{content}}}
+      <div class="post-content">
+        {{{content}}}
 
-                {{#if tags}}
-                    <p class="post-tags"><span>Tagged:</span> {{tags}}</p>
-                {{/if}}
-            </div>
-        </article>
-    {{/post}}
+        {{#if tags}}
+          <p class="post-tags">{{tags}}</p>
+        {{/if}}
+      </div>
+    </article>
+  {{/post}}
 </div>

@@ -168,7 +168,7 @@ footer {
 #ajax-container {
   padding: 0px 0px 40px; }
 
-.home-template #ajax-container, .tag-template #ajax-container {
+.home-template #ajax-container, .archive-template #ajax-container, .tag-template #ajax-container {
   background-color: #f0f0f0; }
 
 /* ============================================================ */
@@ -413,18 +413,22 @@ footer {
       transition-timing-function: ease-in;
       transition-duration: 300ms;
       opacity: .5; }
-  .post-stub .post-tags {
-    margin-bottom: 15px; }
-    .post-stub .post-tags a {
-      display: inline-block;
-      text-transform: uppercase;
-      font-weight: 700; }
   .post-stub .post-stub-container {
     padding: 35px 20px; }
   .post-stub .post-excerpt {
     font-size: 15px;
     line-height: 25px;
     margin-bottom: 20px; }
+
+.post-tags {
+  margin-bottom: 15px; }
+  .post-tags a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700; }
+
+.post-container .post-tags {
+  text-align: center; }
 
 .tag-ideas .post-tags a {
   background-color: #ff358b !important; }
@@ -507,9 +511,6 @@ footer {
     margin-right: 25px;
     margin-left: 25px; }
 
-  .post-tags {
-    width: 100%; }
-
   .share {
     float: left;
     margin-top: 20px; }
@@ -517,7 +518,8 @@ footer {
       margin: 0 5px 0 0; } }
 @media only screen and (max-width: 400px) {
   .post-title {
-    font-size: 32px; }
+    font-size: 45px;
+    line-height: 45px; }
 
   .post-container,
   .post-list {
